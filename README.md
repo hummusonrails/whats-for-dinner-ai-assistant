@@ -1,7 +1,9 @@
 # What's for Dinner AI Assistant
 
 <center>
+
 ![Demo of AI Assistant](public/demo.gif)
+
 </center>
 
 Ever come home from a long day of coding and think, "What's for dinner?" Well, now you can ask your AI assistant! This project is an AI assistant that can help you decide what to make for dinner. 
