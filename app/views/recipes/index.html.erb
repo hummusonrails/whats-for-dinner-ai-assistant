@@ -1,0 +1,37 @@
+<div class="min-h-screen flex flex-col">
+  <main class="flex-grow bg-gradient-to-r from-green-200 to-blue-200">
+    <div class="max-w-7xl mx-auto py-16 sm:px-6 lg:px-8">
+      <div class="bg-white shadow overflow-hidden sm:rounded-lg">
+        <div class="px-4 py-5 sm:px-6">
+          <h3 class="text-lg leading-6 font-medium text-gray-900">All Recipes</h3>
+        </div>
+        <div class="border-t border-gray-200">
+          <ul class="divide-y divide-gray-200">
+            <% @recipes.each do |recipe| %>
+              <li class="px-4 py-4 sm:px-6">
+                <div class="flex items-center justify-between">
+                  <div class="text-sm font-medium text-indigo-600 truncate">
+                    <%= link_to recipe.date.strftime("%B %d, %Y %H:%M"), recipe_path(recipe) %>
+                  </div>
+                  <div class="ml-2 flex-shrink-0 flex">
+                    <%= link_to "View Recipe", recipe_path(recipe), class: "px-4 py-2 bg-blue-500 text-white text-sm font-medium rounded-md hover:bg-blue-600" %>
+                  </div>
+                </div>
+                <div class="mt-2 sm:flex sm:justify-between">
+                  <div class="sm:flex">
+                    <div class="mr-6 flex items-center text-sm text-gray-500">
+                      <%= recipe.recipe_titles.first %>
+                    </div>
+                  </div>
+                  <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
+                    <%= pluralize(recipe.recipe_titles.size, 'recipe') %> available
+                  </div>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
